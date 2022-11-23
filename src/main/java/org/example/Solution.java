@@ -8,14 +8,15 @@ public class Solution {
     public ListNode mergeTwoLists(ListNode list1, ListNode list2) {
 
         ListNode aux = new ListNode();
-
         ListNode result = aux;
 
         if(list1 == null){
+
             return list2;
         }
 
         if(list2 == null){
+
             return list1;
         }
 
@@ -26,13 +27,11 @@ public class Solution {
                 aux.next = list2;
 
                 list2 = list2.next;
-
             }else{
 
                 aux.next = list1;
 
                 list1 = list1.next;
-
             }
 
             aux = aux.next;
@@ -54,21 +53,24 @@ public class Solution {
     public ListNode mergeTwoLists2(ListNode list1, ListNode list2) {
 
         if(list1 == null){
+
              return list2;
         }
 
         if(list2 == null){
+
             return list1;
         }
 
         if( list1.val < list2.val){
 
             list1.next = mergeTwoLists(list1.next, list2);
-            return list1;
 
+            return list1;
         }else{
 
             list2.next = mergeTwoLists(list1, list2.next);
+
             return list2;
         }
 
